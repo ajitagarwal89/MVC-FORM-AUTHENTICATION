@@ -1,0 +1,20 @@
+Database
+
+CREATE TABLE [dbo].[tbl_AdminLogin](
+	[Admin_Id] [nvarchar](50) NULL,
+	[Password] [nvarchar](50) NULL
+) ON [PRIMARY]
+
+GO
+
+create proc Sp_Admin_Login
+@Admin_Id nvarchar(50),
+@Password nvarchar(50),
+@IsValid bit  out 
+As
+begin
+set @Isvalid=(select count(Admin_Id)from tbl_AdminLogin where Admin_Id=@Admin_Id and Password=@Password)
+end
+
+
+Insert into tbl_AdminLogin (Admin_Id,Password)values('Admin','PasswordAdmin')
