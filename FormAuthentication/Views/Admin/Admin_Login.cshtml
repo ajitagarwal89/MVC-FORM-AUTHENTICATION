@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin_Login</title>
+</head>
+<body>
+    <form method="post">
+        <div>
+            <label>Admin ID:</label><input type="text" name="adminid" style="width:150px" />
+            <br />
+            <label>Password</label><input type="password" name="Password"   style="width:150px" />
+            <br />
+            <input type="submit" value="Login" />
+        </div>
+    </form>
+    <a href="Logout">Logout</a>
+</body>
+</html>
+@{ 
+    if (TempData["msg"] != null)
+    {
+    <script>
+        alert('@TempData["msg"]');</script>}
+}
